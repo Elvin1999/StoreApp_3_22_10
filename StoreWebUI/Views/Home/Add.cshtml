@@ -1,0 +1,22 @@
+﻿
+
+<section style="width:50%;margin:auto;margin-top:50px;">
+    <section>
+        <label>Product Name</label>
+        <input class="form-control" id="product" required />
+    </section>
+    <section>
+        <label>Product Quantity</label>
+        <input class="form-control" id="quantity" type="number" min="0" max="250" required />
+    </section>
+    <section>
+        <label>Product Price</label>
+        <input class="form-control" id="price" type="number" required />
+    </section>
+    <section>
+        <input type="file" id="MyImage" name="MyImage" class="form-control"
+               enctype="multipart/form-data" required />
+    </section>
+    <a class="btn btn-primary" onclick="addProduct()">Add Product</a>
+</section>
+
