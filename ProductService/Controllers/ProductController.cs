@@ -17,6 +17,13 @@ namespace ProductService.Controllers
         private IProductExtentionServices _extentionServices;
         private IMapper _mapper;
 
+        public ProductController(IProductRepository productRepository, IProductExtentionServices extentionServices, IMapper mapper)
+        {
+            _productRepository = productRepository;
+            _extentionServices = extentionServices;
+            _mapper = mapper;
+        }
+
         // GET: api/<ProductController>
         [HttpGet]
         public async Task<IEnumerable<ProductDto>> Get()
@@ -34,6 +41,13 @@ namespace ProductService.Controllers
             var dto=_mapper.Map<ProductDto>(item);
 
             return dto;
+        }
+
+        [HttpGet("GetImage/{id}")]
+        public async Task<IActionResult> GetImage(int id)
+        {
+            var result=await _extentionServices.GetProductImageAsync(id);
+            return Ok(result);
         }
 
     }

@@ -25,7 +25,7 @@
       "UpstreamHttpMethod": [ "Get", "Post" ]
     },
     {
-      "DownstreamPathTemplate": "/api/barcode/GetBarCode",
+      "DownstreamPathTemplate": "/api/barcode/AddBarcode",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
